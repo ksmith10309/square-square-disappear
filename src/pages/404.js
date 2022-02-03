@@ -8,10 +8,10 @@ const headingStyles = {
 }
 
 const sectionStyles = {
-  marginTop: 150,
+  marginTop: 100,
   marginRight: "auto",
   marginLeft: "auto",
-  width: "400px",
+  textAlign: "center",
 }
 
 const codeStyles = {
@@ -46,7 +46,7 @@ const NotFoundPage = () => {
           <br />
         </p>
       </div>
-      <div className="link-section">
+      <div>
         <Link to="/" className='link-text'>Home</Link>
       </div>
     </main>

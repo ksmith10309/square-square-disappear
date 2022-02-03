@@ -6,7 +6,7 @@ import "../styles/page.css"
 const IndexPage = () => {
   return (
     <Layout pageTitle="Home">
-      <div className="home-section">
+      <div className="home">
         <p className="home-text">
           This is Square Square Disappear, the game where you click on squares to make them disappear.
         </p>
@@ -17,7 +17,7 @@ const IndexPage = () => {
           Click the button below to start.
         </p>
       </div>
-      <div className="game-link">
+      <div>
         <Link to="/level-1/"
           className={'link-text'}>
           Level 1

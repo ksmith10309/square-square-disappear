@@ -82,7 +82,7 @@ class Level2 extends React.Component {
             {this.renderSquare(1)}
           </div>
         </div>
-        <div className="link-section">
+        <div>
           <Link to="/level-3/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
             Next Level

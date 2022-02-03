@@ -95,7 +95,7 @@ class Level3 extends React.Component {
             {this.renderSquare(2)}
           </div>
         </div>
-        <div className="link-section">
+        <div>
           <Link to="/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
             Home

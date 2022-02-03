@@ -1,4 +1,4 @@
-.home-section {
+.home {
   margin-top: 50px;
 }
 
@@ -7,10 +7,6 @@
   font-size: 1rem;
   line-height: 2rem;
   margin: 25px 0px;
-}
-
-.link-section {
-  text-align: center;
 }
 
 .link-text {
@@ -26,31 +22,35 @@
   position: absolute;
   text-align: center;
   width: 150px;
-  top: 700px;
+  top: 770px;
   text-decoration: none;
 }
 
 .game-board-1 {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 175px;
   width: 200px;
 }
 
 .game-board-2 {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 125px;
   width: 200px;
 }
 
 .game-board-3 {
   margin-left: auto;
   margin-right: auto;
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 125px;
+  width: 200px;
+}
+
+.game-board-5 {
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 75px;
   width: 200px;
 }
 
@@ -95,4 +95,44 @@
 
 .show {
   display: block;
+}
+
+@media (max-width: 450px) {
+  .home {
+    margin-top: 0px;
+  }
+
+  .link-text {
+    border: 3px solid rgb(100, 100, 100);
+    font-size: 1.1rem;
+    top: 525px;
+  }
+
+  .game-board-1 {
+    margin-top: 105px;
+  }
+
+  .game-board-2 {
+    margin-top: 70px;
+  }
+
+  .game-board-3 {
+    margin-top: 70px;
+    width: 150px;
+  }
+
+  .game-board-5 {
+    margin-top: 35px;
+    width: 150px;
+  }
+
+  .board-grid-2-col {
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+  }
+
+  .square {
+    border: 3px solid rgb(100, 100, 100);
+    height: 75px;
+    width: 75px;
+  }
 }
