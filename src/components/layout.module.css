@@ -1,0 +1,41 @@
+body {
+  background-color: rgb(0, 17, 3);
+  color: rgb(220, 220, 220);
+  margin: 20px;
+}
+
+h1 {
+  font-family: "Orbitron";
+  font-size: 3rem;
+  margin: 0;
+  text-align: center;
+}
+
+.light {
+  color: rgb(0, 255, 34);
+}
+
+.medium {
+  color: rgb(0, 167, 22);
+}
+
+.dark {
+  color: rgb(0, 99, 13);
+}
+
+.container {
+  font-family: sans-serif;
+  margin: auto;
+  max-width: 500px;
+}
+
+.heading {
+  border-top: 4px solid rgb(100, 100, 100);
+  border-bottom: 4px solid rgb(100, 100, 100);
+  font-family: "Roboto";
+  font-size: 2rem;
+  margin: 2rem 0 0 0;
+  padding: 15px 0px;
+  text-align: center;
+  text-transform: uppercase;
+}
