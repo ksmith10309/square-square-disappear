@@ -18,6 +18,7 @@
     "@fontsource/orbitron": "^4.5.2",
     "@fontsource/roboto": "^4.5.2",
     "gatsby": "^4.6.0",
+    "gatsby-plugin-manifest": "^4.6.0",
     "gatsby-plugin-react-helmet": "^5.6.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
