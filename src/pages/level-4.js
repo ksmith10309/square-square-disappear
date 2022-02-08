@@ -3,41 +3,43 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import "../styles/page.css"
 
-class Level3 extends React.Component {
+class Level4 extends React.Component {
   constructor(props) {
     super(props);
     const colors = ['light', 'medium', 'dark']
     const random1 = Math.round(Math.random()*2);
     const random2 = Math.round(Math.random()*2);
     const random3 = Math.round(Math.random()*2);
-    const squares = [colors[random1], colors[random2], colors[random3]];
+    const random4 = Math.round(Math.random()*2);
+    const squares = [colors[random1], colors[random2], colors[random3], colors[random4]];
 
     const array = [];
-    for (let i = 0; i < 3; i++) {
+    for (let i = 0; i < 4; i++) {
       array.push(i);
     }
     shuffle(array);
 
-    let arrayOfArrays = [];
-    let fillingArray =  array.slice();
+    let arrayOfArrays = Array(4).fill(null);
+    let fillingArray1 =  array.slice();
+    let fillingArray2 =  array.slice();
 
     for (let j = 0; j < array.length; j++) {
       let arrayToPush;
-      if (array[j] === 0 || array[j] === 1) {
-        let index = fillingArray.indexOf(j);
-        if (fillingArray.length === 3) {
-          fillingArray.splice(index, 1);
-          arrayToPush = [j].concat([fillingArray[Math.round(Math.random())]]);
-        } else {
-          fillingArray.splice(index, 1);
-          arrayToPush = [j].concat(fillingArray);
-        }
-        arrayOfArrays.push(arrayToPush);
+
+      if (j === 0) {
+        fillingArray1.splice(fillingArray1.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat([fillingArray1[0], fillingArray1[Math.round(Math.random()) + 1]]);
+      } else if (j === 1) {
+        fillingArray1.splice(fillingArray1.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray1);
+      } else if (j === 2) {
+        fillingArray2.splice(fillingArray2.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray2[Math.round(Math.random())*2]);
+      } else {
+        arrayToPush = [array[j]];
       }
-      else if (array[j] === 2) {
-        arrayToPush = [j];
-        arrayOfArrays.push(arrayToPush);
-      }
+
+      arrayOfArrays[array[j]] = arrayToPush;
     }
 
     this.state = {
@@ -87,18 +89,19 @@ class Level3 extends React.Component {
 
   render() {
     return (
-      <Layout pageTitle="Level 3">
+      <Layout pageTitle="Level 4">
         <div className="game-board-2-row">
           <div className="board-grid-2-col">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
+            {this.renderSquare(3)}
           </div>
         </div>
         <div>
-          <Link to="/level-4/"
+          <Link to="/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
-            Next Level
+            Home
           </Link>
         </div>
       </Layout>
@@ -106,7 +109,7 @@ class Level3 extends React.Component {
   }
 }
 
-export default Level3;
+export default Level4;
 
 function Square(props) {
   return (
