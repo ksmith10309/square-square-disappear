@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import "../styles/page.css"
 
-class Level4 extends React.Component {
+class Level6 extends React.Component {
   constructor(props) {
     super(props);
     const colors = ['light', 'medium', 'dark']
@@ -11,15 +11,17 @@ class Level4 extends React.Component {
     const random2 = Math.round(Math.random()*2);
     const random3 = Math.round(Math.random()*2);
     const random4 = Math.round(Math.random()*2);
-    const squares = [colors[random1], colors[random2], colors[random3], colors[random4]];
+    const random5 = Math.round(Math.random()*2);
+    const random6 = Math.round(Math.random()*2);
+    const squares = [colors[random1], colors[random2], colors[random3], colors[random4], colors[random5], colors[random6]];
 
     const array = [];
-    for (let i = 0; i < 4; i++) {
+    for (let i = 0; i < 6; i++) {
       array.push(i);
     }
     shuffle(array);
 
-    let arrayOfArrays = Array(4).fill(null);
+    let arrayOfArrays = Array(6).fill(null);
     let fillingArray =  array.slice();
 
     for (let j = 0; j < array.length; j++) {
@@ -27,11 +29,17 @@ class Level4 extends React.Component {
 
       if (j === 0) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*3], fillingArray[4]);
       } else if (j === 1) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2], fillingArray[3]);
       } else if (j === 2) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2]);
+      } else if (j === 3) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())]);
+      } else if (j === 4) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
         arrayToPush = [array[j]].concat(fillingArray);
       } else {
@@ -88,17 +96,19 @@ class Level4 extends React.Component {
 
   render() {
     return (
-      <Layout pageTitle="Level 4">
-        <div className="game-board-2-row">
+      <Layout pageTitle="Level 6">
+        <div className="game-board-3-row">
           <div className="board-grid-2-col">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
             {this.renderSquare(3)}
+            {this.renderSquare(4)}
+            {this.renderSquare(5)}
           </div>
         </div>
         <div>
-          <Link to="/level-5/"
+          <Link to="/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
             Next Level
           </Link>
@@ -108,7 +118,7 @@ class Level4 extends React.Component {
   }
 }
 
-export default Level4;
+export default Level6;
 
 function Square(props) {
   return (
