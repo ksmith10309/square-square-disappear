@@ -3,7 +3,7 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import "../styles/page.css"
 
-class Level5 extends React.Component {
+class Level7 extends React.Component {
   constructor(props) {
     super(props);
     const colors = ['light', 'medium', 'dark']
@@ -12,15 +12,17 @@ class Level5 extends React.Component {
     const random3 = Math.round(Math.random()*2);
     const random4 = Math.round(Math.random()*2);
     const random5 = Math.round(Math.random()*2);
-    const squares = [colors[random1], colors[random2], colors[random3], colors[random4], colors[random5]];
+    const random6 = Math.round(Math.random()*2);
+    const random7 = Math.round(Math.random()*2);
+    const squares = [colors[random1], colors[random2], colors[random3], colors[random4], colors[random5], colors[random6], colors[random7]];
 
     const array = [];
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < 7; i++) {
       array.push(i);
     }
     shuffle(array);
 
-    let arrayOfArrays = Array(5).fill(null);
+    let arrayOfArrays = Array(7).fill(null);
     let fillingArray =  array.slice();
 
     for (let j = 0; j < array.length; j++) {
@@ -28,14 +30,20 @@ class Level5 extends React.Component {
 
       if (j === 0) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2], fillingArray[3]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*4], fillingArray[5]);
       } else if (j === 1) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*3], fillingArray[4]);
       } else if (j === 2) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2], fillingArray[3]);
       } else if (j === 3) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2]);
+      } else if (j === 4) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())]);
+      } else if (j === 5) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
         arrayToPush = [array[j]].concat(fillingArray);
       } else {
@@ -92,20 +100,22 @@ class Level5 extends React.Component {
 
   render() {
     return (
-      <Layout pageTitle="Level 5">
-        <div className="board-center board-col-3-row-2">
+      <Layout pageTitle="Level 7">
+        <div className="board-center board-col-3-row-3">
           <div className="board-grid">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
             {this.renderSquare(3)}
             {this.renderSquare(4)}
+            {this.renderSquare(5)}
+            {this.renderSquare(6)}
           </div>
         </div>
         <div>
-          <Link to="/level-6/"
+          <Link to="/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
-            Next Level
+            Home
           </Link>
         </div>
       </Layout>
@@ -113,7 +123,7 @@ class Level5 extends React.Component {
   }
 }
 
-export default Level5;
+export default Level7;
 
 function Square(props) {
   return (

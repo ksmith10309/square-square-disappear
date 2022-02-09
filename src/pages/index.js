@@ -20,7 +20,7 @@ const IndexPage = () => {
       <div>
         <Link to="/level-1/"
           className={'link-text'}>
-          Level 1
+          First Level
         </Link>
       </div>
     </Layout>

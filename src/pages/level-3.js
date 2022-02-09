@@ -88,8 +88,8 @@ class Level3 extends React.Component {
   render() {
     return (
       <Layout pageTitle="Level 3">
-        <div className="game-board-2-row">
-          <div className="board-grid-2-col">
+        <div className="board-center board-col-2-row-2">
+          <div className="board-grid">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}

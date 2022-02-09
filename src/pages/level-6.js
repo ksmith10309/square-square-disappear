@@ -97,8 +97,8 @@ class Level6 extends React.Component {
   render() {
     return (
       <Layout pageTitle="Level 6">
-        <div className="game-board-3-row">
-          <div className="board-grid-2-col">
+        <div className="board-center board-col-3-row-2">
+          <div className="board-grid">
             {this.renderSquare(0)}
             {this.renderSquare(1)}
             {this.renderSquare(2)}
@@ -108,7 +108,7 @@ class Level6 extends React.Component {
           </div>
         </div>
         <div>
-          <Link to="/"
+          <Link to="/level-7/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
             Next Level
           </Link>

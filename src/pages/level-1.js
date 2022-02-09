@@ -44,8 +44,8 @@ class Level1 extends React.Component {
   render() {
     return (
       <Layout pageTitle="Level 1">
-        <div className="game-board-1-row">
-          <div className="board-grid-1-col">
+        <div className="board-center board-col-1-row-1">
+          <div className="board-grid">
             {this.renderSquare(0)}
           </div>
         </div>

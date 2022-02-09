@@ -26,33 +26,37 @@
   text-decoration: none;
 }
 
-.game-board-1-row {
+.board-center {
   margin-left: auto;
   margin-right: auto;
+}
+
+.board-col-1-row-1 {
+  margin-top: 175px;
+  width: 100px;
+}
+
+.board-col-2-row-1 {
   margin-top: 175px;
   width: 200px;
 }
 
-.game-board-2-row {
-  margin-left: auto;
-  margin-right: auto;
+.board-col-2-row-2 {
   margin-top: 125px;
   width: 200px;
 }
 
-.game-board-3-row {
-  margin-left: auto;
-  margin-right: auto;
+.board-col-3-row-2 {
+  margin-top: 125px;
+  width: 300px;
+}
+
+.board-col-3-row-3 {
   margin-top: 75px;
-  width: 200px;
+  width: 300px;
 }
 
-.board-grid-1-col {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-.board-grid-2-col {
+.board-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 }
@@ -101,27 +105,33 @@
     top: 525px;
   }
 
-  .game-board-1-row {
+  .board-col-1-row-1 {
+    margin-top: 105px;
+    width: 75px;
+  }
+
+  .board-col-2-row-1 {
     margin-top: 105px;
     width: 150px;
   }
 
-  .game-board-2-row {
+  .board-col-2-row-2 {
     margin-top: 70px;
     width: 150px;
   }
 
-  .game-board-3-row {
+  .board-col-3-row-2 {
+    margin-top: 70px;
+    width: 225px;
+  }
+
+  .board-col-3-row-3 {
     margin-top: 35px;
-    width: 150px;
+    width: 225px;
   }
 
-  .board-grid-1-col {
+  .board-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-  }
-
-  .board-grid-2-col {
     grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
   }
 
