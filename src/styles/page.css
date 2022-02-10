@@ -1,8 +1,8 @@
-.home {
+.page {
   margin-top: 50px;
 }
 
-.home-text {
+.page-text {
   font-family: "Roboto";
   font-size: 1rem;
   line-height: 2rem;
@@ -100,7 +100,7 @@
 }
 
 @media (max-width: 450px) {
-  .home {
+  .page {
     margin-top: 0px;
   }
 

@@ -3,28 +3,28 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import "../styles/page.css"
 
-const IndexPage = () => {
+const EndPage = () => {
   return (
-    <Layout pageTitle="Home">
+    <Layout pageTitle="The End">
       <div className="page">
         <p className="page-text">
-          This is Square Square Disappear, the game where you click on squares to make them disappear.
+          Congratulations. You solved all 12 levels of Square Square Disappear.
         </p>
         <p className="page-text">
-          Make the color of all the squares match the color of the background to move on to the next level.
+          Square Square Disappear was created by Katherine Smith. Thanks for playing.
         </p>
         <p className="page-text">
-          Click the button below to start.
+          Click the button below to go back to home.
         </p>
       </div>
       <div>
-        <Link to="/level-1/"
+        <Link to="/"
           className={'link-text'}>
-          First Level
+          Home
         </Link>
       </div>
     </Layout>
   )
 }
 
-export default IndexPage
+export default EndPage

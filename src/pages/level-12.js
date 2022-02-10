@@ -127,9 +127,9 @@ class Level12 extends React.Component {
           </div>
         </div>
         <div>
-          <Link to="/"
+          <Link to="/end/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
-            Home
+            The End
           </Link>
         </div>
       </Layout>
