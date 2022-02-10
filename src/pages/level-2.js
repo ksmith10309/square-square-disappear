@@ -7,12 +7,11 @@ class Level2 extends React.Component {
   constructor(props) {
     super(props);
     const colors = ['light', 'medium', 'dark'];
-    const random1 = Math.round(Math.random()*2);
-    const random2 = Math.round(Math.random()*2);
-    const squares = [colors[random1], colors[random2]];
-
+    const squares = [];
     const array = [];
     for (let i = 0; i < 2; i++) {
+      let random = Math.floor(Math.random()*3);
+      squares.push(colors[random]);
       array.push(i);
     }
 
@@ -76,7 +75,7 @@ class Level2 extends React.Component {
   render() {
     return (
       <Layout pageTitle="Level 2">
-        <div className="board-center board-col-2-row-1">
+        <div className="board-center board-col-1-row-2">
           <div className="board-grid">
             {this.renderSquare(0)}
             {this.renderSquare(1)}

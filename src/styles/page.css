@@ -36,9 +36,9 @@
   width: 100px;
 }
 
-.board-col-2-row-1 {
-  margin-top: 175px;
-  width: 200px;
+.board-col-1-row-2 {
+  margin-top: 125px;
+  width: 100px;
 }
 
 .board-col-2-row-2 {
@@ -46,14 +46,19 @@
   width: 200px;
 }
 
-.board-col-3-row-2 {
-  margin-top: 125px;
-  width: 300px;
+.board-col-2-row-3 {
+  margin-top: 75px;
+  width: 200px;
 }
 
 .board-col-3-row-3 {
   margin-top: 75px;
   width: 300px;
+}
+
+.board-col-4-row-3 {
+  margin-top: 75px;
+  width: 400px;
 }
 
 .board-grid {
@@ -102,32 +107,37 @@
   .link-text {
     border: 3px solid rgb(44, 40, 0);
     font-size: 1.1rem;
-    top: 525px;
+    top: 600px;
   }
 
   .board-col-1-row-1 {
-    margin-top: 105px;
+    margin-top: 150px;
     width: 75px;
   }
 
-  .board-col-2-row-1 {
-    margin-top: 105px;
-    width: 150px;
+  .board-col-1-row-2 {
+    margin-top: 110px;
+    width: 75px;
   }
 
   .board-col-2-row-2 {
+    margin-top: 110px;
+    width: 150px;
+  }
+
+  .board-col-2-row-3 {
     margin-top: 70px;
     width: 150px;
   }
 
-  .board-col-3-row-2 {
+  .board-col-3-row-3 {
     margin-top: 70px;
     width: 225px;
   }
 
-  .board-col-3-row-3 {
-    margin-top: 35px;
-    width: 225px;
+  .board-col-4-row-3 {
+    margin-top: 70px;
+    width: 300px;
   }
 
   .board-grid {

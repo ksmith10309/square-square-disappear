@@ -3,20 +3,20 @@ import { Link } from 'gatsby'
 import Layout from '../components/layout'
 import "../styles/page.css"
 
-class Level7 extends React.Component {
+class Level8 extends React.Component {
   constructor(props) {
     super(props);
     const colors = ['light', 'medium', 'dark'];
     const squares = [];
     const array = [];
-    for (let i = 0; i < 7; i++) {
+    for (let i = 0; i < 8; i++) {
       let random = Math.floor(Math.random()*3);
       squares.push(colors[random]);
       array.push(i);
     }
     shuffle(array);
 
-    let arrayOfArrays = Array(7).fill(null);
+    let arrayOfArrays = Array(8).fill(null);
     let fillingArray =  array.slice();
 
     for (let j = 0; j < array.length; j++) {
@@ -24,20 +24,23 @@ class Level7 extends React.Component {
 
       if (j === 0) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*2], fillingArray[Math.floor(Math.random())*2 + 2], fillingArray[5]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*3], fillingArray[Math.floor(Math.random())*3 + 3], fillingArray[6]);
       } else if (j === 1) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*4], fillingArray[4]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*2], fillingArray[Math.floor(Math.random())*2 + 2], fillingArray[5]);
       } else if (j === 2) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*3], fillingArray[3]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*4], fillingArray[4]);
       } else if (j === 3) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*2], fillingArray[2]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*3], fillingArray[3]);
       } else if (j === 4) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random()*2)]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*2], fillingArray[2]);
       } else if (j === 5) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random()*2)]);
+      } else if (j === 6) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
         arrayToPush = [array[j]].concat(fillingArray);
       } else {
@@ -94,7 +97,7 @@ class Level7 extends React.Component {
 
   render() {
     return (
-      <Layout pageTitle="Level 7">
+      <Layout pageTitle="Level 8">
         <div className="board-center board-col-3-row-3">
           <div className="board-grid">
             {this.renderSquare(0)}
@@ -104,10 +107,11 @@ class Level7 extends React.Component {
             {this.renderSquare(4)}
             {this.renderSquare(5)}
             {this.renderSquare(6)}
+            {this.renderSquare(7)}
           </div>
         </div>
         <div>
-          <Link to="/level-8/"
+          <Link to="/level-9/"
             className={'link-text ' + (this.state.linkVisible ? 'show' : 'hide')}>
             Next Level
           </Link>
@@ -117,7 +121,7 @@ class Level7 extends React.Component {
   }
 }
 
-export default Level7;
+export default Level8;
 
 function Square(props) {
   return (

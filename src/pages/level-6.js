@@ -6,17 +6,12 @@ import "../styles/page.css"
 class Level6 extends React.Component {
   constructor(props) {
     super(props);
-    const colors = ['light', 'medium', 'dark']
-    const random1 = Math.round(Math.random()*2);
-    const random2 = Math.round(Math.random()*2);
-    const random3 = Math.round(Math.random()*2);
-    const random4 = Math.round(Math.random()*2);
-    const random5 = Math.round(Math.random()*2);
-    const random6 = Math.round(Math.random()*2);
-    const squares = [colors[random1], colors[random2], colors[random3], colors[random4], colors[random5], colors[random6]];
-
+    const colors = ['light', 'medium', 'dark'];
+    const squares = [];
     const array = [];
     for (let i = 0; i < 6; i++) {
+      let random = Math.floor(Math.random()*3);
+      squares.push(colors[random]);
       array.push(i);
     }
     shuffle(array);
@@ -29,16 +24,16 @@ class Level6 extends React.Component {
 
       if (j === 0) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*3], fillingArray[4]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*4], fillingArray[4]);
       } else if (j === 1) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2], fillingArray[3]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*3], fillingArray[3]);
       } else if (j === 2) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())*2]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random())*2], fillingArray[2]);
       } else if (j === 3) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
-        arrayToPush = [array[j]].concat(fillingArray[Math.round(Math.random())]);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random()*2)]);
       } else if (j === 4) {
         fillingArray.splice(fillingArray.indexOf(array[j]), 1);
         arrayToPush = [array[j]].concat(fillingArray);
@@ -97,7 +92,7 @@ class Level6 extends React.Component {
   render() {
     return (
       <Layout pageTitle="Level 6">
-        <div className="board-center board-col-3-row-2">
+        <div className="board-center board-col-2-row-3">
           <div className="board-grid">
             {this.renderSquare(0)}
             {this.renderSquare(1)}

@@ -6,38 +6,33 @@ import "../styles/page.css"
 class Level3 extends React.Component {
   constructor(props) {
     super(props);
-    const colors = ['light', 'medium', 'dark']
-    const random1 = Math.round(Math.random()*2);
-    const random2 = Math.round(Math.random()*2);
-    const random3 = Math.round(Math.random()*2);
-    const squares = [colors[random1], colors[random2], colors[random3]];
-
+    const colors = ['light', 'medium', 'dark'];
+    const squares = [];
     const array = [];
     for (let i = 0; i < 3; i++) {
+      let random = Math.floor(Math.random()*3);
+      squares.push(colors[random]);
       array.push(i);
     }
     shuffle(array);
 
-    let arrayOfArrays = [];
+    let arrayOfArrays = Array(3).fill(null);
     let fillingArray =  array.slice();
 
     for (let j = 0; j < array.length; j++) {
       let arrayToPush;
-      if (array[j] === 0 || array[j] === 1) {
-        let index = fillingArray.indexOf(j);
-        if (fillingArray.length === 3) {
-          fillingArray.splice(index, 1);
-          arrayToPush = [j].concat([fillingArray[Math.round(Math.random())]]);
-        } else {
-          fillingArray.splice(index, 1);
-          arrayToPush = [j].concat(fillingArray);
-        }
-        arrayOfArrays.push(arrayToPush);
+
+      if (j === 0) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray[Math.floor(Math.random()*2)]);
+      } else if (j === 1) {
+        fillingArray.splice(fillingArray.indexOf(array[j]), 1);
+        arrayToPush = [array[j]].concat(fillingArray);
+      } else {
+        arrayToPush = [array[j]];
       }
-      else if (array[j] === 2) {
-        arrayToPush = [j];
-        arrayOfArrays.push(arrayToPush);
-      }
+
+      arrayOfArrays[array[j]] = arrayToPush;
     }
 
     this.state = {
